@@ -1,3 +1,18 @@
+## configurar docker
+
+  ## db/init.sql
+  CREATE DATABASE odooLibreria;
+  CREATE ROLE odooAdmin WITH LOGIN PASSWORD 'password';
+  ALTER ROLE odooAdmin CREATEDB;
+  GRANT ALL PRIVILEGES ON DATABASE odooLibreria TO odooAdmin;
+
+  ## .env
+  POSTGRES_USER=odooAdmin
+  POSTGRES_PASSWORD=password
+  POSTGRES_DB=odooLibreria
+
+
+## comandos docker
 docker-compose down -v
 docker-compose up -d
 
