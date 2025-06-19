@@ -1,0 +1,12 @@
+.o_main_navbar, .o_main_navbar .o_menu_sections .dropdown-toggle {
+  background: #003399!important;
+}
+
+.o_main_navbar .o_menu_sections .o_nav_entry {
+  background: var(--NavBar-entry-backgroundColor, #3366CC)!important;
+  border: 1px solid transparent;
+}
+
+.o_kanban_renderer .o_kanban_record:not(.o_legacy_kanban_record):not(.o_kanban_ghost) {
+  border: 1px solid #E0E6F0;
+}
