@@ -66,6 +66,7 @@
                     <group>
                         <group name="pos" string="Point of Sale">
                             <field name="color" invisible="True"/>
+                            <!-- aqui van los campos de nuevo producto en la pestana "Punto de venta" -->
                             <field name="to_weight"/>
                             <field name="pos_categ_ids"
                                    widget="many2many_tags"
