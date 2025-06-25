@@ -22,9 +22,6 @@ class ProductTemplate(models.Model):
     )
     color = fields.Integer('Color Index', compute="_compute_color", store=True, readonly=False)
 
-    # custom para libreria
-    ISBN = fields.Char(string='ISBN', required=False)
-
     @api.depends('pos_categ_ids')
     def _compute_color(self):
         """Automatically set the color field based on the selected category."""
