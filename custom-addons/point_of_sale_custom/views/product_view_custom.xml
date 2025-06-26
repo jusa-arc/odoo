@@ -6,7 +6,9 @@
     <field name="inherit_id" ref="product.product_template_only_form_view"/>
     <field name="arch" type="xml">
         <xpath expr="//field[@name='barcode']" position="after">
-            <field name="isbn" string = "codigo ISBN del libro"/>
+            <field name="autor" string = "Autor"/>
+            <field name="editorial" string = "Editorial"/>
+            <field name="isbn" string = "codigo ISBN"/>
         </xpath>
     </field>
   </record>
