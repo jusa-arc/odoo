@@ -9,6 +9,7 @@
             <field name="autor" string = "Autor"/>
             <field name="editorial" string = "Editorial"/>
             <field name="isbn" string = "codigo ISBN"/>
+            <field name="clave_sat" string = "clave SAT"/>
         </xpath>
     </field>
   </record>

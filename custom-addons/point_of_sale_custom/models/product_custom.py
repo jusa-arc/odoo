@@ -7,4 +7,4 @@ class ProductTemplateLibrary(models.Model):
     autor = fields.Char(string='Autor', required=False)
     editorial = fields.Char(string='Editorial', required=False)
     isbn = fields.Char(string='ISBN', required=False)
-    #TODO clave_sat
+    clave_sat = fields.Char(string="clave SAT", required=False)
