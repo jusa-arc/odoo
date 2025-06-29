@@ -1,3 +1,7 @@
 .pos-topheader {
   background: #f5f8f7!important;
 }
+
+span[data-menu="account"] {
+    display: none !important;
+}
