@@ -50,3 +50,7 @@ package.json
 /share/
 /src/
 env
+
+
+# minimal addons
+/minimal_addons
