@@ -15,6 +15,29 @@ services:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     restart: always
 
+  odoo:
+    build: .  # Esto le dice a Docker Compose que construya la imagen desde el Dockerfile en el directorio actual
+    image: odoo-library  # El nombre de la imagen construida
+    container_name: odoo_library
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./odoo:/mnt/odoo  # Montar el directorio local ./odoo dentro del contenedor en /mnt/odoo
+      - ./custom-addons:/mnt/custom-addons  # Montar los addons personalizados en /mnt/custom-addons
+      - ./minimal_addons:/mnt/minimal_addons  # Montar los addons mínimos en /mnt/minimal_addons
+      - ./odoo.conf:/mnt/odoo.conf  # Montar el archivo de configuración de Odoo
+      - ./odoo-bin:/mnt/odoo-bin  # Montar el archivo odoo-bin desde la raíz
+      - ./setup:/mnt/setup
+      - ./setup.cfg:/mnt/setup.cfg  # Montar el archivo de configuración setup.cfg
+      - ./setup.py:/mnt/setup.py  # Montar el archivo de configuración setup.py
+    environment:
+      - HOST=db  # Nombre del contenedor de base de datos
+      - USER=${POSTGRES_USER}
+      - PASSWORD=${POSTGRES_PASSWORD}
+    depends_on:
+      - db  # Este servicio depende de odoo_db (base de datos)
+    restart: always
+
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin_container
