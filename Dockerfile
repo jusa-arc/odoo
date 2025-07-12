@@ -52,4 +52,4 @@ RUN pip install -r /mnt/requirements.txt
 EXPOSE 8069
 
 # Comando para ejecutar Odoo
-CMD ["python", "/mnt/odoo-bin", "-r", "odooAdmin", "-w", "odooPassDev", "--addons-path=minimal_addons,custom-addons"]
+CMD ["python", "/mnt/odoo-bin", "-c", "/mnt/odoo.conf", "-r", "odooAdmin", "-w", "odooPassDev", "--addons-path=minimal_addons,custom-addons"]

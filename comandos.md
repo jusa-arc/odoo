@@ -31,5 +31,5 @@ python odoo-bin -u point_of_sale -d pegaso -r odooAdmin -w odooPassDev --stop-af
 ## crear custom module
 python odoo-bin scaffold point_of_sale_custom custom-addons/
 
-## levantar docker
+## levantar docker (automaticamente detecta el .env)
 docker-compose up --build -d
